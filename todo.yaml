@@ -17,6 +17,21 @@ spec:
         image: anilbidari/todo:1.0
         ports:
         - containerPort: 8080
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-lb
+spec:
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: todo
+  type: LoadBalancer
 #aad a line
 ## add secodn line
 ##line3
