@@ -1,12 +1,12 @@
 ---
 - hosts: 54.88.164.98
-  - name: Remove an existing Service object
-    community.okd.k8s:
-      state: absent
-      api_version: v1
-      kind: Service
-      namespace: todorest
-      name: todo-lb
+- name: Remove an existing Service object
+  community.okd.k8s:
+    state: absent
+    api_version: v1
+    kind: Service
+    namespace: todorest
+    name: todo-lb
 #   become_user: root
 #   tasks:
 
