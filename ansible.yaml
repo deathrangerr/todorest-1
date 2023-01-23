@@ -1,12 +1,19 @@
 ---
 - hosts: 54.88.164.98
-  become_user: root
-  tasks:
+  - name: Remove an existing Service object
+    community.okd.k8s:
+      state: absent
+      api_version: v1
+      kind: Service
+      namespace: todorest
+      name: todo-lb
+#   become_user: root
+#   tasks:
 
-  - name: Download jar file
-    get_url:
-      url: http://192.168.181.242:8081/repository/maven-releases/todorest-0.0.1-SNAPSHOT.jar
-      dest: /home/ubuntu
+#   - name: Download jar file
+#     get_url:
+#       url: http://192.168.181.242:8081/repository/maven-releases/todorest-0.0.1-SNAPSHOT.jar
+#       dest: /home/ubuntu
 
-  - name: run jar file
-    shell: nohup java -jar todorest-0.0.1-SNAPSHOT.jar /tmp 2>> /dev/null >> /dev/null & 
+#   - name: run jar file
+#     shell: nohup java -jar todorest-0.0.1-SNAPSHOT.jar /tmp 2>> /dev/null >> /dev/null & 
