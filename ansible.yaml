@@ -1,5 +1,4 @@
 ---
-
 - name: Remove an existing Service object
   hosts: 54.88.164.98
   oc:
