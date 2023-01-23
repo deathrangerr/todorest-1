@@ -1,5 +1,5 @@
 ---
-- hosts: master
+- hosts: 54.88.164.98
   become_user: root
   tasks:
 
