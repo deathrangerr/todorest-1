@@ -1,7 +1,7 @@
 ---
 - name: Remove an existing Service object
   hosts: 54.88.164.98
-  okd:
+  community.okd.oc:
     state: absent
     api_version: v1
     kind: Service
